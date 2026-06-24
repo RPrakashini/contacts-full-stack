@@ -25,7 +25,10 @@ db.connect((err) => {
 // API
 app.get("/contacts", (req, res) => {
   db.query("SELECT * FROM contacts", (err, result) => {
-    if (err) return res.json([]);
+    if (err) {
+      console.error(err);
+      return res.status(500).json(err);
+    }
     res.json(result);
   });
 });
@@ -37,7 +40,10 @@ app.post("/contacts", (req, res) => {
     "INSERT INTO contacts (name, phone) VALUES (?, ?)",
     [name, phone],
     (err) => {
-      if (err) return res.send("DB error");
+      if (err) {
+        console.error(err);
+        return res.status(500).json(err);
+      }
       res.send("Inserted");
     }
   );
