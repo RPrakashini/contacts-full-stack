@@ -6,7 +6,7 @@ function App() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
-  const API = "http://contacts-backend-env.eba-km4bmwwz.ap-south-1.elasticbeanstalk.com"
+  const API = "http://contacts-backend-env.eba-ykybgvm7.ap-south-1.elasticbeanstalk.com"
 
   // ✅ Fetch contacts
  const fetchContacts = () => {
