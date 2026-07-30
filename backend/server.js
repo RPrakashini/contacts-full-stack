@@ -8,10 +8,10 @@ app.use(express.json());
 
 // RDS connection
 const db = mysql.createConnection({
-  host: "contacts-db.c9sg8088kqsm.ap-south-1.rds.amazonaws.com",
+  host: "contactsdb.c9sg8088kqsm.ap-south-1.rds.amazonaws.com",
   user: "admin",
   password: "admin123",
-  database: "contacts-db"
+  database: "contactsdb"
 });
 
 db.connect((err) => {
